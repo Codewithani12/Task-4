@@ -1,31 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tic-Tac-Toe</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <header class="header">
-      <h1>Tic-Tac-Toe</h1>
-      <p class="status" id="status">Player <span id="currentPlayer">X</span>'s turn</p>
-    </header>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
 
-    <section class="board" id="board" aria-label="Tic Tac Toe board">
-      <!-- 9 cells rendered by JS -->
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3 class="hero-greeting">Hello, I'm</h3>
+                <h1 class="hero-name">Alex Johnson</h1>
+                <div class="hero-role">
+                    <span>Full Stack</span>
+                    <div class="typing-container">
+                        <span class="typing-text">Developer</span>
+                        <span class="cursor"></span>
+                    </div>
+                </div>
+                <p class="hero-tagline">
+                    Crafting beautiful, functional web experiences with modern technologies
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Profile">
+                    <div class="image-border"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </section>
 
-    <div class="controls">
-      <button class="button" id="restartBtn" type="button">Restart Game</button>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a passionate full-stack developer with 5+ years of experience building web applications 
+                        that are not only functional but also delightful to use. I specialize in creating responsive, 
+                        performant, and accessible web experiences.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <h4>📚 Education</h4>
+                            <p><strong>Bachelor of Science in Computer Science</strong></p>
+                            <p class="text-muted">University of Technology, 2019</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>🎯 Focus Areas</h4>
+                            <p>Web Development, UI/UX Design, Performance Optimization, Cloud Architecture</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>💡 Philosophy</h4>
+                            <p>Clean code, user-centric design, and continuous learning drive my work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=400&fit=crop" alt="About">
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Frontend Skills -->
+                <div class="skill-card glass-effect">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>HTML5</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>CSS3</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skill-card glass-effect">
+                    <div class="skill-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Node.js</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>MongoDB</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>SQL</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 83%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-card glass-effect">
+                    <div class="skill-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Git & GitHub</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Docker</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>AWS</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 81%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>VS Code</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 96%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-effect">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="E-commerce Platform">
+                        <div class="project-overlay">
+                            <div class="project-icons">
+                                <a href="#" class="project-icon" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. 
+                            Features include user authentication, product catalog, shopping cart, and payment integration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-effect">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d440a117?w=400&h=250&fit=crop" alt="Task Management App">
+                        <div class="project-overlay">
+                            <div class="project-icons">
+                                <a href="#" class="project-icon" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Collaborative task management application with real-time updates using WebSocket. 
+                            Includes user authentication, task creation, progress tracking, and team collaboration features.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Express.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">WebSocket</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-effect">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8e90f?w=400&h=250&fit=crop" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-icons">
+                                <a href="#" class="project-icon" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Advanced data analytics dashboard with interactive charts and real-time data visualization. 
+                            Built with Chart.js and D3.js for complex data representations and insights.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Achievements</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">2022 - Present</div>
+                        <h3>Senior Full Stack Developer</h3>
+                        <p class="company">Tech Solutions Inc.</p>
+                        <p class="description">
+                            Leading development of modern web applications using React and Node.js. 
+                            Mentor junior developers and contribute to architectural decisions.
+                        </p>
+                        <ul class="achievements">
+                            <li>Improved application performance by 45%</li>
+                            <li>Led migration to microservices architecture</li>
+                            <li>Trained 5+ junior developers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3>Full Stack Developer</h3>
+                        <p class="company">Digital Agency Pro</p>
+                        <p class="description">
+                            Developed responsive websites and web applications for various clients. 
+                            Implemented RESTful APIs and managed databases.
+                        </p>
+                        <ul class="achievements">
+                            <li>Delivered 20+ successful projects</li>
+                            <li>Achieved 99.9% uptime for all deployments</li>
+                            <li>Reduced load time by 60%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">2019 - 2020</div>
+                        <h3>Junior Web Developer</h3>
+                        <p class="company">Startup Hub</p>
+                        <p class="description">
+                            Started web development journey, working on front-end and back-end technologies. 
+                            Collaborated with design and product teams.
+                        </p>
+                        <ul class="achievements">
+                            <li>Built 5 web applications from scratch</li>
+                            <li>Learned best practices in coding</li>
+                            <li>Contributed to open-source projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Have a project in mind? Feel free to reach out!</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card glass-effect">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:hello@alexjohnson.dev">hello@alexjohnson.dev</a></p>
+                    </div>
+                    <div class="info-card glass-effect">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>San Francisco, CA</p>
+                    </div>
+                    <div class="info-card glass-effect">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-effect" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+                        <span class="form-error" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <h4>Follow Me</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="CodePen">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <small>Click a square to place your mark. Enjoy!</small>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Alex Johnson. All rights reserved.</p>
+                <p>Designed & Built with <span class="heart">❤️</span> by Alex Johnson</p>
+            </div>
+        </div>
     </footer>
-  </main>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
